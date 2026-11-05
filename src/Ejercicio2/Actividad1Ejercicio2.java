@@ -14,6 +14,7 @@ public class Actividad1Ejercicio2 {
         int opcion = -1;
         int dato;
 
+        lista.crearLista(teclado);
 
         while (opcion != 0) {
 
@@ -26,7 +27,7 @@ public class Actividad1Ejercicio2 {
             System.out.println("0. Salir");
 
             System.out.print("Selecciona una opcion: ");
-            opcion = teclado.nextInt();
+            opcion = leerEntero(teclado);
 
 
             if (opcion == 1) {
@@ -39,7 +40,7 @@ public class Actividad1Ejercicio2 {
                         "Introduce un numero entero: "
                 );
 
-                dato = teclado.nextInt();
+                dato = leerEntero(teclado);
 
                 lista.agregarFinal(dato);
 
@@ -49,11 +50,9 @@ public class Actividad1Ejercicio2 {
                         "Valor que quieres eliminar: "
                 );
 
-                dato = teclado.nextInt();
+                dato = leerEntero(teclado);
 
-                lista.eliminarElemento(
-                        dato, teclado
-                );
+                lista.eliminarElemento(dato, teclado);
 
             } else if (opcion == 4) {
 
@@ -76,5 +75,20 @@ public class Actividad1Ejercicio2 {
 
 
         teclado.close();
+    }
+
+    public static int leerEntero(Scanner teclado) {
+
+        while (true) {
+
+
+
+            if (teclado.hasNextInt()) {
+                return teclado.nextInt();
+            }
+
+            System.out.println("Error: debes introducir un numero entero.");
+            teclado.next();
+        }
     }
 }

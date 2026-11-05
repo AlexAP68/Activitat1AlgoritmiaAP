@@ -49,14 +49,16 @@ class Lista2 {
         }
 
         System.out.print("Cuantos elementos quieres introducir?: ");
-        int cantidad = teclado.nextInt();
+        int cantidad = Actividad1Ejercicio2.leerEntero(
+                teclado);
 
         int i = 1;
 
         while (i <= cantidad) {
 
             System.out.print("Introduce un numero: ");
-            int valor = teclado.nextInt();
+            int valor = Actividad1Ejercicio2.leerEntero(
+                    teclado);
 
             agregarFinal(valor);
 
@@ -74,19 +76,28 @@ class Lista2 {
         int coincidencias;
         int elegida;
         int contador;
+        int posicion;
 
 
         // Contamos cuántos nodos tienen ese valor
         coincidencias = 0;
+        posicion = 1;
         actual = cabeza;
 
         while (actual != null) {
 
             if (actual.getInfo() == valor) {
+
                 coincidencias = coincidencias + 1;
+
+                System.out.println(
+                        "Coincidencia " + coincidencias +
+                                ": posicion " + posicion
+                );
             }
 
             actual = actual.getSeg();
+            posicion = posicion + 1;
         }
 
 
@@ -111,7 +122,8 @@ class Lista2 {
                         "Que coincidencia quieres eliminar?: "
                 );
 
-                elegida = teclado.nextInt();
+                elegida = Actividad1Ejercicio2.leerEntero(
+                        teclado);
 
 
                 while (elegida < 1 ||
@@ -125,7 +137,8 @@ class Lista2 {
                             "Que coincidencia quieres eliminar?: "
                     );
 
-                    elegida = teclado.nextInt();
+                    elegida = Actividad1Ejercicio2.leerEntero(
+                            teclado);
                 }
 
             } else {

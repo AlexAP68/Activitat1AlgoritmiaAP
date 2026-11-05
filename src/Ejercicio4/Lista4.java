@@ -42,14 +42,14 @@ public void crearLista(Scanner teclado) {
     }
 
     System.out.print("Cuantos elementos quieres introducir?: ");
-    int cantidad = teclado.nextInt();
+    int cantidad = Actividad1Ejercicio4.leerEntero(teclado);
 
     int i = 1;
 
     while (i <= cantidad) {
 
         System.out.print("Introduce un numero: ");
-        int valor = teclado.nextInt();
+        int valor = Actividad1Ejercicio4.leerEntero(teclado);
 
         agregarFinal(valor);
 

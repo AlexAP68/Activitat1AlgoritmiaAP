@@ -22,12 +22,12 @@ public class Actividad1Ejercicio1 {
             System.out.println("0. Salir");
             System.out.print("Selecciona una opcion: ");
 
-            opcion = teclado.nextInt();
+            opcion = leerEntero(teclado);
 
             if (opcion == 1) {
 
                 System.out.print("Introduce un numero entero: ");
-                dato = teclado.nextInt();
+                dato = leerEntero(teclado);
 
                 lista.agregarAlFinal(dato);
 
@@ -46,5 +46,20 @@ public class Actividad1Ejercicio1 {
         }
 
         teclado.close();
+    }
+
+    public static int leerEntero(Scanner teclado) {
+
+        while (true) {
+
+
+            if (teclado.hasNextInt()) {
+                return teclado.nextInt();
+            }
+
+            System.out.println("Error: debes introducir un numero entero.");
+
+            teclado.next(); // Descartamos la entrada incorrecta
+        }
     }
 }

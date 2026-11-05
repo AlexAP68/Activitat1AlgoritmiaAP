@@ -26,7 +26,7 @@ public class Actividad1Ejercicio4 {
             System.out.println("0. Salir");
 
             System.out.print("Selecciona una opcion: ");
-            opcion = teclado.nextInt();
+            opcion = leerEntero(teclado);
 
 
             if (opcion == 1) {
@@ -36,7 +36,7 @@ public class Actividad1Ejercicio4 {
             } else if (opcion == 2) {
 
                 System.out.print("Introduce un numero entero: ");
-                dato = teclado.nextInt();
+                dato = leerEntero(teclado);
 
                 lista.agregarFinal(dato);
 
@@ -46,7 +46,7 @@ public class Actividad1Ejercicio4 {
                         "Introduce la posicion k que quieres eliminar: "
                 );
 
-                k = teclado.nextInt();
+                k = leerEntero(teclado);
 
                 lista.eliminarKesimo(k);
 
@@ -65,5 +65,21 @@ public class Actividad1Ejercicio4 {
         }
 
         teclado.close();
+    }
+
+    public static int leerEntero(Scanner teclado) {
+
+        while (true) {
+
+
+
+            if (teclado.hasNextInt()) {
+                return teclado.nextInt();
+            }
+
+            System.out.println("Error: debes introducir un numero entero.");
+
+            teclado.next(); // Descartamos la entrada incorrecta
+        }
     }
 }
